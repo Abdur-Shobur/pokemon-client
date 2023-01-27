@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Button({ children, className }) {
+function Button({ children, class_name }) {
   return (
-    <button className={`px-3 rounded bg-red-400  ${className}`}>
+    <button className={`px-3 rounded bg-red-400  ${class_name}`}>
       {children}
     </button>
   )
