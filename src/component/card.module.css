@@ -1,0 +1,18 @@
+/* .card:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top: 80px solid white;
+  border-left: 80px solid red;
+  width: 0;
+} */
+
+.card {
+  /* width: 200px;
+  min-height: 200px; */
+  -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 77%, 75% 100%, 0% 100%);
+  /* clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 25%, 75% 0); */
+  clip-path: polygon(0% 0%, 100% 0, 100% 77%, 75% 100%, 0% 100%);
+  background: rgba(254, 255, 255, 0.85);
+}
