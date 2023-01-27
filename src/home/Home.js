@@ -7,8 +7,12 @@ function Home() {
   return (
     <div className="">
       <div
-        style={{ background: `url(${background})` }}
-        className={`!bg-cover py-10 pb-20 ${style.bg_img}`}
+        style={{
+          background: `url(${background})`,
+          backgroundPosition: '0% 0%',
+          backgroundSize: '100% 100%',
+        }}
+        className={`!bg-no-repeat py-10 pb-20 ${style.bg_img}`}
       >
         <div className="container mx-auto">
           <CategoryLists />
