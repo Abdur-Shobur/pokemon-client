@@ -8,7 +8,7 @@ import 'swiper/css/navigation'
 import { Navigation } from 'swiper'
 function CategoryLists() {
   return (
-    <div className="mt-40">
+    <div className="mt-60">
       <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
         <CategoryCard />
         <CategoryCard />
