@@ -83,7 +83,7 @@ function Details() {
                 </div>
                 <div className="flex-1">
                   <h1 className="text-3xl font-semibold mb-3">Category</h1>
-                  <p className="my-2 text-xl font-semibold">No data</p>
+                  <p className="my-2 text-xl font-semibold">No data in API</p>
                 </div>
               </div>
               <div className="flex justify-between mt-8">
@@ -129,7 +129,7 @@ function Details() {
                 {/* <span className="bg-slate-500 px-5 py-2 text-2xl text-white rounded-md">
             Grass
           </span> */}
-                <h1>No Data</h1>
+                <h1>No Data in API</h1>
               </div>
             </div>
             <div>

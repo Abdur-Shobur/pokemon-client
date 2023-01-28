@@ -47,6 +47,7 @@
   overflow: hidden;
   z-index: -1;
   height: 100%;
+  left: 0;
 }
 .right_side_image {
   position: absolute;

@@ -6,8 +6,10 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { Navigation } from 'swiper'
+import CategoryCardLoader from '../component/CategoryCardLoader'
 function CategoryLists() {
   const [pokemons, setPokemons] = useState([])
+  const [loader, setLoader] = useState(true)
   const gqlQuery = `query Pokemons($limit: Int, $offset: Int) {
     pokemons(limit: $limit,offset: $offset ) {
       results {
@@ -22,6 +24,7 @@ function CategoryLists() {
   }`
 
   useEffect(() => {
+    setLoader(true)
     const gqlVariables = {
       limit: 10,
       offset: 1,
@@ -39,12 +42,27 @@ function CategoryLists() {
       .then((res) => res.json())
       .then((res) => {
         setPokemons(res.data.pokemons.results)
+        setLoader(false)
       })
   }, [gqlQuery])
 
   return (
-    <div className="mt-60">
+    <div className="mt-60 min-h-[50vh]">
       <div className="hidden md:grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+        {loader && (
+          <>
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+            <CategoryCardLoader />
+          </>
+        )}
         {pokemons?.map((e) => (
           <CategoryCard key={e.id} pokemon={e} />
         ))}
