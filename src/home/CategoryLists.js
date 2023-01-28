@@ -62,18 +62,11 @@ function CategoryLists() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <CategoryCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CategoryCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CategoryCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <CategoryCard />
-          </SwiperSlide>
+          {pokemons?.map((e) => (
+            <SwiperSlide>
+              <CategoryCard key={e.id} pokemon={e} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
