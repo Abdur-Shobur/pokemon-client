@@ -36,7 +36,7 @@ function CategoryCard({ pokemon }) {
         })
     }
   }, [pokemon?.name, gqlQuery])
-  console.log(pokemon)
+
   return (
     <div>
       <Link to={`/details/${pokemon?.name}`}>
