@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import CategoryCard from '../component/CategoryCard'
+import { Virtual } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
@@ -77,12 +78,12 @@ function CategoryLists() {
             type: 'fraction',
           }}
           navigation={true}
-          modules={[Navigation]}
+          modules={[Navigation, Virtual]}
           className="mySwiper"
         >
-          {pokemons?.map((e) => (
-            <SwiperSlide>
-              <CategoryCard key={e.id} pokemon={e} />
+          {pokemons?.map((e, i) => (
+            <SwiperSlide key={e.id} virtualIndex={i}>
+              <CategoryCard pokemon={e} />
             </SwiperSlide>
           ))}
         </Swiper>

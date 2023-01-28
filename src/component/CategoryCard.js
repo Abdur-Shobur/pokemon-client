@@ -37,6 +37,20 @@ function CategoryCard({ pokemon }) {
     }
   }, [pokemon?.name, gqlQuery])
 
+  const get_color = (text) => {
+    switch (text) {
+      case 'grass':
+        return 'bg-lime-500'
+      case 'poison':
+        return 'bg-purple-500'
+      case 'fire':
+        return 'bg-orange-500'
+      case 'bug':
+        return 'bg-lime-600'
+      default:
+        return 'bg-sky-600'
+    }
+  }
   return (
     <div>
       <Link to={`/details/${pokemon?.name}`}>
@@ -58,7 +72,11 @@ function CategoryCard({ pokemon }) {
               </h1>
               <div className="flex gap-2">
                 {types?.map((e, i) => (
-                  <Button key={i} type={e} class_name="bg-blue-500 text-white">
+                  <Button
+                    key={i}
+                    type={e}
+                    class_name={get_color(e?.type?.name)}
+                  >
                     {e?.type?.name}
                   </Button>
                 ))}

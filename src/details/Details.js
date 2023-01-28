@@ -58,6 +58,21 @@ function Details() {
         })
     }
   }, [gqlQuery, params.name])
+
+  const get_color = (text) => {
+    switch (text) {
+      case 'grass':
+        return 'bg-lime-500'
+      case 'poison':
+        return 'bg-purple-500'
+      case 'fire':
+        return 'bg-orange-500'
+      case 'bug':
+        return 'bg-lime-600'
+      default:
+        return 'bg-sky-600'
+    }
+  }
   let content
   if (loading) {
     content = (
@@ -116,7 +131,9 @@ function Details() {
                 {data?.types?.map((e, i) => (
                   <span
                     key={i}
-                    className="bg-slate-500 px-5 py-2 text-2xl capitalize text-white rounded-md"
+                    className={`px-5 py-2 text-2xl capitalize text-white rounded-md ${get_color(
+                      e?.type?.name,
+                    )}`}
                   >
                     {e?.type?.name}
                   </span>
